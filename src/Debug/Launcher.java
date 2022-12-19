@@ -334,18 +334,18 @@ public class Launcher extends javax.swing.JFrame {
         //modulo de generacion de anexo mosivo
         try {
 
-            for (int i = 0; i < Lotes.length;) {
-                if (Lotes[i] != null) {
-                    if (i == 0) {
+            for (int i = 0; i < Lotes.length;) { // Creamos Variable i para contar posicion en vector global y establecemos limte con la cantidad de elementos en vector global
+                if (Lotes[i] != null) { //Validamos que la variable i no este en la ultima pasicion del vector
+                    if (i == 0) { //Posicion inicial del vector Global 
                         PDFMergerUtility ut = new PDFMergerUtility();
                         ut.addSource(Directorio + "\\" + Lotes[0]);
-                        ut.addSource("C:\\Users\\rmoli\\iso\\anexo.pdf");
+                        ut.addSource("C:\\Users\\rmoli\\iso\\anexo.pdf"); //ruta de documento anexo
                         ut.setDestinationFileName(DirectorioDestino + "\\" + Lotes[0]);
                         ut.mergeDocuments(null);
-                        i++;
+                        i++; // incrementa de 1 en 1 la posicion vector global
                         JOptionPane.showMessageDialog(null, "Documento" + Lotes[0]);
                     } else {
-                        System.err.println("Sin Documentos");
+                        System.err.println("Sin Documentos"); // Celda Vacia Reterna al ciclo de inicio de software
                         return;
                     }
                     if (i == 1) {
@@ -516,7 +516,7 @@ public class Launcher extends javax.swing.JFrame {
                         System.err.println("Sin Documentos");
                         return;
                     }
-                    if (i == 14) {
+                    if (i == 14) { //fin del Vector
                         PDFMergerUtility cw5 = new PDFMergerUtility();
                         cw5.addSource(Directorio + "\\" + Lotes[14]);
                         cw5.addSource("C:\\Users\\rmoli\\iso\\anexo.pdf");
@@ -534,7 +534,7 @@ public class Launcher extends javax.swing.JFrame {
                 }
             }
             System.out.println("Documentos Realizados");
-            JOptionPane.showMessageDialog(null, "Documentos Generados Con Exito!!!");
+            JOptionPane.showMessageDialog(null, "Documentos Generados Con Exito!!!"); //mensaje de exito
 
         } catch (Exception x) {
             System.err.println(x.getMessage().toString());
