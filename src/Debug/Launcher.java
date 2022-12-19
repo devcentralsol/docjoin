@@ -1,5 +1,6 @@
 package Debug;
 
+//Importación de Librerias de Ficheros y PDF
 import java.awt.Toolkit;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,15 +18,16 @@ import java.io.File;
  */
 public class Launcher extends javax.swing.JFrame {
 
-    String Directorio = "";
-    String DirectorioDestino = "";
-    String DirectorioDestinoUnoDocto = "";
-    String nombrDocto = "";
-    String[] Lotes = new String[14];
+    String Directorio = ""; // Variable Global Para definer Carpeta raiz
+    String DirectorioDestino = ""; // Variable Global Para definer el Destino de los archibos ya convertidos
+    String DirectorioDestinoUnoDocto = ""; // Variable Global Para definer el Destino de los archibos ya 
+                                           // Convertidos pero para modulo de un solo Documento
+    String nombrDocto = "";                // Nombre de documentos para modulo de un solo Documento
+    String[] Lotes = new String[14];       // Vector para recibir Lote de arcibos PDF
 
     public Launcher() {
         initComponents();
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png"))); // Establce icono para la APP en produccion(Barra de tareas, icono App)
     }
 
     @SuppressWarnings("unchecked")
@@ -231,48 +233,46 @@ public class Launcher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SelectDesDoctoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectDesDoctoActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        //chooser.setFileFilter(filter);
-        int returnVal = chooser.showOpenDialog(this);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath());
-            System.out.println("Nombre Archibo: " + chooser.getSelectedFile().getName());
-            String Ruta = chooser.getSelectedFile().getPath();
-            DirectorioDestinoUnoDocto = Ruta;
-            System.out.println(DirectorioDestinoUnoDocto);
-            JOptionPane.showMessageDialog(null, "Destino de documento Selecionado con exito" + DirectorioDestinoUnoDocto);
+        JFileChooser chooser = new JFileChooser(); //Librerias Para abrir y selecionar listado de carpertads
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); //Filtro para seleccionar solo un directorio
+        int returnVal = chooser.showOpenDialog(this); // Guarda dato de Seleccion de archibo
+        if (returnVal == JFileChooser.APPROVE_OPTION) { // valida si toma una carpeta o no se selecciona
+            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath());  // muestro nombre de directorio
+            System.out.println("Nombre Archibo: " + chooser.getSelectedFile().getName());// // muestra nombre de archibo
+            String Ruta = chooser.getSelectedFile().getPath(); // Guarda ruta de directorio selecionado de forma local
+            DirectorioDestinoUnoDocto = Ruta;  // Guarda ruta de directorio selecionado de forma Global
+            System.out.println(DirectorioDestinoUnoDocto); // imprimir en consola
+            JOptionPane.showMessageDialog(null, "Destino de documento Selecionado con exito" + DirectorioDestinoUnoDocto); // Alerta Visual
         }
     }//GEN-LAST:event_SelectDesDoctoActionPerformed
 
     private void GenericDoctoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenericDoctoUnoActionPerformed
 
         try {
-            PDFMergerUtility ut = new PDFMergerUtility();
-            ut.addSource(Directorio);
-            ut.addSource("C:\\Users\\rmoli\\iso\\anexo.pdf");
-            ut.setDestinationFileName(DirectorioDestinoUnoDocto + "\\" + nombrDocto);
-            ut.mergeDocuments();
-            System.out.println("" + DirectorioDestinoUnoDocto + "" + nombrDocto);
-            JOptionPane.showMessageDialog(null, "Documentos Generados Con Exito !!!");
+            PDFMergerUtility ut = new PDFMergerUtility();//Librerias Para abrir y seleciona Archibo
+            ut.addSource(Directorio); //Seleccion Documento Origen
+            ut.addSource("C:\\Users\\rmoli\\iso\\anexo.pdf"); //Selecciona archibo de leyenda
+            ut.setDestinationFileName(DirectorioDestinoUnoDocto + "\\" + nombrDocto); // Guarda arhibo con leyenda
+            ut.mergeDocuments(); // Cierra Docuento y ejecuta tareas anteriores
+            System.out.println("" + DirectorioDestinoUnoDocto + "" + nombrDocto); // muestra en consola
+            JOptionPane.showMessageDialog(null, "Documentos Generados Con Exito !!!"); //alertra visual
 
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Error Con la Genereacion \n del nuevo Documento.");
+            JOptionPane.showMessageDialog(null, "Error Con la Genereacion \n del nuevo Documento."); //alter de error
         } catch (IOException ex) {
-            Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex); // Si hay error Genera log de error
         }
         System.out.println("" + DirectorioDestinoUnoDocto);
     }//GEN-LAST:event_GenericDoctoUnoActionPerformed
 
     private void filesSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filesSearchActionPerformed
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "Document PDF", "PDF");
-        chooser.setFileFilter(filter);
-        int returnVal = chooser.showOpenDialog(this);
+        JFileChooser chooser = new JFileChooser();//Librerias Para abrir y seleciona Archibo
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Document PDF", "PDF"); // Filtros para definir tipo de Archibos que la Aplicacion soportara
+        chooser.setFileFilter(filter); //Parametrizar y los filtros 
+        int returnVal = chooser.showOpenDialog(this);  // Guarda dato de Seleccion de archibo
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath());
-            System.out.println("Nombre Archibo: " + chooser.getSelectedFile().getName());
+            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath()); // Muestra la ruta
+            System.out.println("Nombre Archibo: " + chooser.getSelectedFile().getName()); // Muestra Nombre del archibo seleccionado
             String Ruta = chooser.getSelectedFile().getPath();
             Directorio = Ruta;
             nombrDocto = chooser.getSelectedFile().getName();
@@ -283,40 +283,39 @@ public class Launcher extends javax.swing.JFrame {
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Hasta pronto!!!");
-        System.exit(0);
+        JOptionPane.showMessageDialog(null, "Hasta pronto!!!"); // mensaje de despedida
+        System.exit(0); // salida del software
     }//GEN-LAST:event_salirActionPerformed
 
     private void LoteSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoteSelectActionPerformed
         // TODO add your handling code here:
 
-        JFileChooser chooser = new JFileChooser();
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        //chooser.setFileFilter(filter);
-        int returnVal = chooser.showOpenDialog(this);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath());
-            //System.out.println("Nombre Archibo: " + chooser.getSelectedFile().getName());
-            String Ruta = chooser.getSelectedFile().getPath();
-            Directorio = Ruta;
-            System.out.println(Ruta);
-            File carpeta = new File(Directorio);
-            String[] listado = carpeta.list();
-            if (listado == null || listado.length == 0) {
+        JFileChooser chooser = new JFileChooser();  // libreria de seleccion de directorio
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // Parametro de solo selecionar carpeta o directorio
+        int returnVal = chooser.showOpenDialog(this); // guarda datos de seleccion
+        if (returnVal == JFileChooser.APPROVE_OPTION) { // valida si seleccionamos una carpeta de forma acertiva
+            System.out.println("Ruta Archibo: " + chooser.getSelectedFile().getPath()); // muestra en consola ruta de carpeta o directorio
+            String Ruta = chooser.getSelectedFile().getPath(); //ruta en variable local
+            Directorio = Ruta; //asignamos variable global a variable Global
+            System.out.println(Ruta); //imprimir en consola
+            File carpeta = new File(Directorio); // Libreria para escanner arbibos en carpeta
+            String[] listado = carpeta.list(); //vector local con documentos encontrados
+            if (listado == null || listado.length == 0) { // validacion de directorio vacio
                 System.out.println("No hay elementos dentro de la carpeta actual");
                 JOptionPane.showMessageDialog(null, "No hay elementos dentro de la carpeta actual");
                 return;
             } else {
-                for (int i = 0; i < listado.length; i++) {
-                    Lotes[i] = listado[i];
-                    System.out.println(Lotes[i]);
+                for (int i = 0; i < listado.length; i++) { // reconremos vector local
+                    Lotes[i] = listado[i];  //asignamos posicion y documentos encontrados a vector local a Vector Global
+                    System.out.println(Lotes[i]); // mostramos lotes de datos en vector Global
                 }
-                JOptionPane.showMessageDialog(null, "Reconocimiento Lote de archibos terminado");
+                JOptionPane.showMessageDialog(null, "Reconocimiento Lote de archibos terminado"); // mensaje de exito
             }
         }
     }//GEN-LAST:event_LoteSelectActionPerformed
 
     private void SelectDesDoctoLotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectDesDoctoLotActionPerformed
+    //Modulo de Seleccion de carpeta destino de documentos en vector global0
         JFileChooser chooser = new JFileChooser();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         //chooser.setFileFilter(filter);
@@ -332,10 +331,9 @@ public class Launcher extends javax.swing.JFrame {
     }//GEN-LAST:event_SelectDesDoctoLotActionPerformed
 
     private void GenericDoctoLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenericDoctoLoteActionPerformed
-
+        //modulo de generacion de anexo mosivo
         try {
 
-            //System.out.println("Lotes"+Lotes.length);
             for (int i = 0; i < Lotes.length;) {
                 if (Lotes[i] != null) {
                     if (i == 0) {
