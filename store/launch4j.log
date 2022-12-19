@@ -1,0 +1,41 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\rmoli\Documents\NetBeansProjects\PdfAddCSPI\store\ANEXO.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\rmoli\Documents\NetBeansProjects\PdfAddCSPI\store\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\rmoli\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\rmoli\AppData\Local\Programs\Python\Python310\;C:\Users\rmoli\AppData\Local\Microsoft\WindowsApps;C:\Users\rmoli\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rmoli\AppData\Roaming\npm;C:\Users\rmoli\AppData\Roaming\Composer\vendor\bin;C:\Users\rmoli\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\heroku\bin;C:\Users\rmoli\.fly\bin;C:\Users\rmoli\Documents\PowerShell\Scripts;C:\Program Files\Java\jdk-19\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\rmoli\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\rmoli\AppData\Local\Programs\Python\Python310\;C:\Users\rmoli\AppData\Local\Microsoft\WindowsApps;C:\Users\rmoli\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rmoli\AppData\Roaming\npm;C:\Users\rmoli\AppData\Roaming\Composer\vendor\bin;C:\Users\rmoli\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\heroku\bin;C:\Users\rmoli\.fly\bin;C:\Users\rmoli\Documents\PowerShell\Scripts;C:\Program Files\Java\jdk-19\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\xampp\php\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\ComposerSetup\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\PowerShell\7\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Local\Programs\Python\Python310\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Local\Programs\Python\Python310\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Roaming\npm\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Roaming\Composer\vendor\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\AppData\Local\JetBrains\Toolbox\scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\heroku\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\.fly\bin\javaw.exe (not found)
+Check launcher:	C:\Users\rmoli\Documents\PowerShell\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe (OK)
+Version string: 1.019.000 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-19\bin\javaw.exe
+Launcher args:	-jar "C:\Users\rmoli\Documents\NetBeansProjects\PdfAddCSPI\store\ANEXO.exe"
+Args length:	75/32768 chars
+Exit code:	0
